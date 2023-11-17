@@ -4,8 +4,8 @@ import { Profile } from './app.interface';
 @Injectable()
 export class AppService {
   profiles = [
-    { id: '1', name: 'Bob' },
-    { id: '2', name: 'John' },
+    { id: 1, name: 'Bob' },
+    { id: 2, name: 'John' },
   ];
 
   getProfiles(): Profile[] {

@@ -17,7 +17,6 @@ export class AppController {
     const profiles = await this.client
       .send<Profile[]>({ cmd: 'get_profiles' }, { ids: users.map((u) => u.id) })
       .toPromise();
-
     return users.map<Account>((u) => ({
       ...u,
       ...profiles.find((p) => p.id === u.id),
@@ -26,6 +25,6 @@ export class AppController {
 
   @Post('accounts')
   async createAccount(@Body() account: Account): Promise<void> {
-    await this.client.emit({ cmd: 'create_account' }, account);
+    await this.client.emit({ cmd: 'create_user' }, account);
   }
 }

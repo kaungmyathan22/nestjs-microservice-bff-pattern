@@ -1,10 +1,10 @@
 export interface Profile {
-  id: string;
+  id: number;
   name: string;
 }
 
 export interface Account {
-  id: string;
+  id: number;
   name: string;
-  login: string;
+  username: string;
 }
